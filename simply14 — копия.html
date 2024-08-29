@@ -302,38 +302,7 @@ nav{
 				console.log('Oblomingo flyed pass', err);
 				});
 				
-		">paste</button>	
-		<button onclick="
-			navigator.clipboard.readText()
-				.then(text => {
-let f=text;				
-let t =f.split(/(\d+)/g).filter(y=>((/\d+/.test(y))?y:'')).filter(x=>x);
-let z=[],b=[];
-t.forEach(x=>{z[+x]=1});
-z.forEach((x,i)=>{if(x){b.push(i)}});
-b.reverse();
-let a='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
-b.forEach((x,i)=>f=f.replaceAll(x,a[i]));
-
-f=f.replaceAll(' ','');		
-f=f.replaceAll(',',', ');
-f=f.replaceAll(':',': ');	
-				
-				f=[...f].map(i=>i.toUpperCase()
-					
-					)
-					.join('').replace(/(.{35})/g,'$1 ');
-				
-				cop.value=f;
-				main(cop.value);
-				btn1.onclick();
-				})
-				.catch(err => {
-				console.log('Oblomingo flyed pass', err);
-				});
-				
-		">paste</button>	
-		
+		">paste</button>		
 	</nav>
 	<textarea id="cop">для копирования</textarea>
 
