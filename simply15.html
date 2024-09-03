@@ -262,7 +262,8 @@ nav{
 	z-index: 50;
 }
 #graf:hover{transform: scale(1.1)}
-
+.kurs {padding: 37px 16px; background-size: 400%;}
+.kurs span {background: #ded;padding: 5px;}
 
 
   </style>  
@@ -284,12 +285,12 @@ nav{
 			document.execCommand('copy');
 			window.getSelection()?.removeAllRanges();
 		">copy</button>
-		<button onclick="
+		<button class="kurs" onclick="
 			navigator.clipboard.readText()
 				.then(text => {
-			text=text.toUpperCase();
-			if(ef.indexOf(text[0])>-1){//Engl detected
-			}	
+					text=text.toUpperCase();
+					if(ef.indexOf(text[0])>-1){//Engl detected
+					}	
 					text=text.replace(/([^\s]{35})/g,'$1 ');
 				
 				cop.value=text;
@@ -301,27 +302,27 @@ nav{
 				});
 				
 		"
-		style="background-image: url(ddd.png); padding: 37px 16px;"
-		><span style="background: #ded;padding: 5px;"> paste </span></button>	
-		<button onclick="
+		style="background-image: url(ddd.png); "
+		><span> paste </span></button>	
+		
+
+		<button class="kurs" onclick="
 			navigator.clipboard.readText()
 				.then(text => {
-let f=text;				
-let t =f.split(/(\d+)/g).filter(y=>((/\d+/.test(y))?y:'')).filter(x=>x);
-let z=[],b=[];
-t.forEach(x=>{z[+x]=1});
-z.forEach((x,i)=>{if(x){b.push(i)}});
-b.reverse();
-let a='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
-b.forEach((x,i)=>f=f.replaceAll(x,a[i]));
+				let f=text;				
+				let t =f.split(/(\d+)/g).filter(y=>((/\d+/.test(y))?y:'')).filter(x=>x);
+				let z=[],b=[];
+				t.forEach(x=>{z[+x]=1});
+				z.forEach((x,i)=>{if(x){b.push(i)}});
+				b.reverse();
+				let a='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
+				b.forEach((x,i)=>f=f.replaceAll(x,a[i]));
 
-f=f.replaceAll(' ','');		
-f=f.replaceAll(',',', ');
-f=f.replaceAll(':',': ');	
+				f=f.replaceAll(' ','');		
+				f=f.replaceAll(',',', ');
+				f=f.replaceAll(':',': ');	
 				
-				f=[...f].map(i=>i.toUpperCase()
-					
-					)
+				f=[...f].map(i=>i.toUpperCase())
 					.join('').replace(/([^\s]{35})/g,'$1 ');
 				
 				cop.value=f;
@@ -333,8 +334,8 @@ f=f.replaceAll(':',': ');
 				});
 				
 		"
-		style="background-image: url(sss.png); padding: 37px 16px;"
-		><span style="background: #ded;padding: 5px;"> paste </span></button>	
+		style="background-image: url(sss.png);"
+		><span> paste </span></button>	
 		
 	</nav>
 	<textarea id="cop">для копирования</textarea>
