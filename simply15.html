@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="data:image/gif;base64,R0lGODlhEAAQAPcAAP8AAHdMZnVPaoFYdItgeYxkdYlgbqB4gbKLiLyXkc+ypuPJvN7Hu97EunxPaYVdeIpieY1mhYpmfQAAAItXbXE1UHVAVaBnd618hraGi7OHiKt9f7qTmn9Pa2s9YG47WW43XnRCYcOntbCKmZl2hH5NZlosSGg2VIpgeptwi6N3jH9RZ5ZtgtSwtPba4Ne5wvr///Xr5fTv5fXn7pVrfnhGY5dxiZJmgKJ6hdrKwuvk2vz28fDk4OHUy8qtqtfDuf3w7d3Ix2IlS3xSdIpbeK2Kj+bYzuLZ0v/++sepq5pzfd7Gw+ve2suuqpx4bfTu5/ry6ZxtdtO+wp51isChoePSyeXa0//+9rSPlvXu45FmWufY1OrTzbCJhf348Pr16X5WUP/98ObR08Gjo+POx+XRzvHb2OvY2ZFfXsSkrIlSUal8evjo4PDf2m4yOtvAveXV1Lycnt/MwOPOyM22s/Dl3e3i47+jlt3HwOPTzLaamF4mMLqWleXP0qmCismyqNu/ucSlqvnu6drOw93HzejZ0efY08KjppFgd3M0VptpgMKerZhjeJdreaV8haWFjufZ1szBrMmwq9W/ssKhnKl5hIxTc3Y5XIdLapVeeJdad4xUbotQaYhbc4NRbm4sT6F8jZt5fJ5seaRzc45VXY5QaIZNbn1DYIhHaYxOcJxadqNZe51VcZhZbZJSanIuSn1IY4hMao5JbotMZ4pJZpNQdYhMc3k3YIM+aYxJbaJdea1igqdjfJtbc5hVc3o2V2opS3YzU4E3YIREZ4hOaIlPbIRKaHs2WYY8YY1HbgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQEewABACwAAAAAEAAQAAAI/wABBHDQYQWOIlTGxPHDSJMqXQAACHjggUUOI1XIyPnTaNOqXREHQPjQQscRK2XmAHLEiRWviAQigHCxA8kVM3QCPerUqlfEAhJCvJiQBMuEoxM8ufIV0QDSCUqoPP306lfEA09hZDkDQxAkULCARURAQQQMHku0oKkzKFKoWMEiJqgwIkYPJlvS2CEkSZQsYREVWCAhw0cTLmruFJo0atawiAsulIDxw0mXNXgMUSJFi1hEBhhMzADyxAubPIcqlapVLGKDDCdoBIHypY0eRJZM2TIWEYAGFDWERAHjZk+iS6duHeu9IYWNIVLCvOGjCBMqXMh6c1Bxg8gUMXD6LAjKlCpXMgABAQA7">
 
-  <title>Замена-15</title>
+  <title>Замена-16</title>
   <style>
 /*
 * Prefixed by https://autoprefixer.github.io/ru/
@@ -33,7 +33,7 @@ body{
 	padding: 33px 0;
 	background: -webkit-gradient(linear, left top, left bottom, from(purple), to(#ded));
 	background: -o-linear-gradient(purple, #ded);
-	background: linear-gradient(purple, #ded); 
+	background: linear-gradient(red, #ded); 
 	text-align: center;
 	}
 	
@@ -56,6 +56,7 @@ body{
 	height: 20px;
     z-index: 9;
 	background: #025202;/*green;*/
+	
 	}
 .ira2{
 	position: absolute;
@@ -82,7 +83,7 @@ body{
 	display: grid; place-items: center;
 	width:43px;  
 	border:4px solid blue;
-	position: fixed; bottom: 0px;
+	position: fixed; bottom: 32px;
 	background: white;
 	font-family : monospace;
 	font-size:24px;
@@ -264,7 +265,35 @@ nav{
 #graf:hover{transform: scale(1.1)}
 .kurs {padding: 37px 16px; background-size: 400%;}
 .kurs span {background: #ded;padding: 5px;}
+/*
+.ira1:after {display:  block;
+	content:attr(data-s);
+	position:absolute; top:-22px; left: 0px; width: 25px;height: 20px;color: red;background: yellow;
+	border:1px solid  green; text-align:center; font-weight: bold;}
+*/
+	
+/*	*/	
+.s0ky:after {display:  block;
+	content:attr(data-v);
+	position:absolute; 
+	t0op:1px; 
+	bottom:-31px;
+	left: 4px; width: 25px;height: 27px;color: red;background: yellow;
+	border:1px solid  green; text-align:center; font-weight: bold;
+	z-index:4;
+	}	
+ 
+.alen {
+	display:  block;
+	position: absolute;  
+	bottom:-31px;
+	left: -2px;
+	width: 40px; height: 27px;
+	color: red; background: white;
+	border: 1px solid  blue; text-align:center; font-weight: bold;
 
+}
+	
 
   </style>  
 </head>
@@ -289,8 +318,7 @@ nav{
 			navigator.clipboard.readText()
 				.then(text => {
 					text=text.toUpperCase();
-					if(ef.indexOf(text[0])>-1){//Engl detected
-					}	
+					//if(ef.indexOf(text[0])>-1){//Engl detected}	
 					text=text.replace(/([^\s]{35})/g,'$1 ');
 				
 				cop.value=text;
@@ -367,7 +395,7 @@ nav{
 <script>
 'use strict';
 var dataru=true; // русский
-var droba=false; // слова более 35 букв дробить на мелкие
+//var droba=false; // слова более 35 букв дробить на мелкие
 var ir,ib;
 let ws;// коорды размеры башен
 let ef='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';// имена небоскребов
@@ -479,10 +507,17 @@ function main(ss){
 	nom=['en','ru'][+dataru];// имя алфавита
 	graf.innerHTML=['en','ru'][+!dataru];;
 	
+
+
+	p=new Set([...ss].filter(x=>zet[+!dataru]['af'].indexOf(x)>-1));
+		
+	const dupa=Array.from(p).join('');//горд
+	
+	
 	fa.innerHTML=[
 			'\n<div id="ru" class="ru" style="display:none;display: block;">\n'+
-			zet[0]['qf'].map((x,i)=>
-				{return '<div class="ivan ira1" style="height:'+
+			zet[0]['qf'].map((x,i)=>   // dupa[i]  
+				{return '<div class="ivan ira1" data-s="'+''+'" style="height:'+
 				(zet[0]['fq'][zet[0]['af'].indexOf(x)]+21)+
 				'px;'+
 				'">'+x+'</div>\n'}).join('')+'</div>\n',
@@ -492,11 +527,8 @@ function main(ss){
 				(zet[1]['fq'][zet[1]['af'].indexOf(x)]/3+21)+
 				'px;'+//
 				'">'+x+'</div>\n'}).join('')+'</div>\n',		
-		].join('');
-
-	p=new Set([...ss].filter(x=>zet[+!dataru]['af'].indexOf(x)>-1));
-		
-	const dupa=Array.from(p).join('');//горд
+		].join('');	
+	
 
 	const q=[...ss].filter(x=>zet[+!dataru]['af'].indexOf(x)>-1)// частота
 		.reduce((a,x)=>{a[x]=~~a[x]+1;return a},{})		
@@ -535,7 +567,14 @@ function main(ss){
 	'<fieldset class="sky'+
 	`${(booa[i])?' a':''}`+ //вертикальный штрих
 	`${(boob[i])?' b':''}`+ // горизонтальн штрих
-		'" style="left:'+(i*46)+'px">'+x+'</fieldset>\n').join('');	
+	'" data-v="'+qa[i]+
+		'" style="left:'+(i*46)+'px">'+x+'<div class="alen">'+qa[i]+'</div></fieldset>\n').join('');	
+		
+		//'" style="left:'+(i*46)+'px">'+x+'</fieldset>\n').join('');			
+		//'" style="left:'+(i*46)+'px">'+qa[i]+'<br>'+x+'</fieldset>\n').join('');	
+		//'" style="left:'+(i*46)+'px">'+qa[i]+'<br>'+x+'</fieldset>\n').join('');		
+		//'" style="left:'+(i*46)+'px">'+dupa[i]+'</fieldset>\n').join('');		
+
 	fa.innerHTML+=iq4;
 	//*************************
 	ir={
@@ -606,16 +645,16 @@ function main(ss){
 
 
 function conny(pok){// вывод деши
-	console.log(tuki);
-	console.log(pok);
-	o=[...tuki].reduce((a,x)=>{a[x]='.'; return a},{}); console.log(o);
+	//console.log(tuki);
+	//console.log(pok);
+	o=[...tuki].reduce((a,x)=>{a[x]='.'; return a},{}); //console.log(o);
 	[...ir[pok]].forEach((x,i)=>{//'ru' 'en'
 		let v=x.offsetLeft+ 12;
 		let w=x.getBoundingClientRect().top+20;
 		let b=x.innerText;
 		for(let j=0; j<tuki.length; j++){//в какую башню попал
 			f=w>ws[j].y1&&w<ws[j].y2;
-			if(f&&(v>ws[j].x1)&&(v<ws[j].x2)){o[tuki[j]]=b;}//	 
+			if(f&&(v>ws[j].x1)&&(v<ws[j].x2)){o[tuki[j]]=b; }//	alert(tuki[j]) 
 			}
 		});
 		
