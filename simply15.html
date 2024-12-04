@@ -242,6 +242,7 @@ nav{
 	-webkit-box-direction: normal; 
 	-ms-flex-direction: column; 
 	flex-direction: column;
+	flex-direction: row;
 	}
 #cop{
 	width: calc(100% - 6px);
@@ -299,21 +300,23 @@ nav{
 </head>
 <body>
 	<nav>
-		<button id="btn1" onclick="
-			ir['ru'].forEach((x,i)=>{// построить буквы шеренгой
-				x.style.top=ib['ru'][i].offsetTop+'px';
-				x.style.left=ib['ru'][i].offsetLeft+'px';});	
-			ir['en'].forEach((x,i)=>{
-				x.style.top=ib['en'][i].offsetTop+'px';
-				x.style.left=ib['en'][i].offsetLeft+'px';});								
-			conny(nom);// вывод деши
-		">reset</button>
-		<button onclick="
-			cop.value=m2.innerText.replace(/(.{35})( )/g,'$1');
-			cop.select();
-			document.execCommand('copy');
-			window.getSelection()?.removeAllRanges();
-		">copy</button>
+		<div style="height: 104px;display: flex;flex-direction: column;background: red;">
+			<button style="height:52px" id="btn1" onclick="
+				ir['ru'].forEach((x,i)=>{// построить буквы шеренгой
+					x.style.top=ib['ru'][i].offsetTop+'px';
+					x.style.left=ib['ru'][i].offsetLeft+'px';});	
+				ir['en'].forEach((x,i)=>{
+					x.style.top=ib['en'][i].offsetTop+'px';
+					x.style.left=ib['en'][i].offsetLeft+'px';});								
+				conny(nom);// вывод деши
+			">reset</button>
+			<button style="height:52px" onclick="
+				cop.value=m2.innerText.replace(/(.{35})( )/g,'$1');
+				cop.select();
+				document.execCommand('copy');
+				window.getSelection()?.removeAllRanges();
+			">copy</button>
+		</div>	
 		<button class="kurs" onclick="
 			navigator.clipboard.readText()
 				.then(text => {
@@ -364,6 +367,26 @@ nav{
 		"
 		style="background-image: url(sss.png);"
 		><span> paste </span></button>	
+		
+		<button class="kurs" onclick="
+			navigator.clipboard.readText()
+				.then(text => {
+					text=text.toUpperCase();
+					//if(ef.indexOf(text[0])>-1){//Engl detected}	
+					text=text.replace(/([^\s]{35})/g,'$1 ');
+				
+				cop.value=text;
+				main(cop.value);
+				btn1.onclick();// reset в шеренгу
+				})
+				.catch(err => {
+				console.log('Oblomingo flyed pass', err);
+				});
+				
+		"
+		style="background-image: url(vvv.png); "
+		><span> paste </span></button>			
+		
 		
 	</nav>
 	<textarea id="cop">для копирования</textarea>
