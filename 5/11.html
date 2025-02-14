@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href=
+
+
+  <title>Doc</title>
+  <style>
+  *:not(hr), *::after, *::before {box-sizing: border-box;margin:0;padding:0;border:0}ul {list-style-type: none}
+#i{padding: 33px 0;background: linear-gradient(rgba(0,0,0,0.9), blue); 
+text-align: center;
+}
+
+  </style>  
+</head>
+<body text="black" bgcolor="white">
+<a href="file:///K:/!/projAll/html3/DJ3/!dig3.html">aug2023</a>
+<a href="file:///K:/!/projAll/html2/dig2.html">feb2023</a>
+<a href="file:///K:/!/projAll/html1/!dig1.html">dec2023</a>
+<a href="file:///K:/!/projAll/css_%D0%BF%D1%81%D0%B5%D0%B2%D0%B4%D1%8B/index.html">два кота
+(с iframes)
+</a>
+
+
+<div id=i>
+</div>
+
+ 
+<script>
+'use strict'; 
+const text='34_28 68 91 13_83 10 65 27 68_49 10 26 65 27 68 75 26 39 78_53_75 83 53 18 26 36 62 91._26 19 74 53 13_49 10 83 10 65 53_53 36 68 72 28 10_28 13 18 86 10 27 53 75 39_73 68_57 26 18 10 91_53_57_36 53 65_28 68 91 10._83 68 75 27 13_34 13 24 13 18 53 36 74 53_36 10 74 10 36 57 36 13,_83 68 74 10 91 10 91 10_36 13_68 26 74 18 62 34 10 27 10_36 10 75 26 13 86 39_68 74 36 10._83 18 10 34 28 10,_26 57 26_50 62 27 68_83 68 65 57 86 13._26 57 26_49 10 83 10 65 53_34 19 13 27 53 75 39  53_34 75 13_75 68 50 68 15_83 18 68 83 53 26 10 27 53._49 10 83 10 65 53_10 27 74 68 72 68 27 44,_83 68 28 72 68 18 13 34 80 13 72 68_91 10 85 27 10,_83 68 26 10,  75 26 10 18 68 15_68 28 13 86 28 62_53 13 19 13_27 13 74 10 18 75 26 34_ _91 13 36 26 68 27 10_53,_74 10 86 13 26 75 44,_34 10 27 13 18 39 44 36 74 53.  34_83 18 53 65 68 86 13 15_26 13 91 36 68 26 53 96 10,_53_18 44 28 68 91_23 26 68 26_28 78 75 75 10 36 28 13 18_ _34 26 44 36 57 27_72 68 27 68 34 57_34_34 68 18 68 26,_23 26 10 74 53 15_72 18 53 47 __ 75 26 13 17 34 44 26 36 53 74._86 28 57 96 53 15._74 68 72 28 10_18 10 36 13 36 68 13_86 53 34 68 26 36 68 13_53 75 83 57 75 26 53 26_28 57 65.';
+
+	let f=text;				
+	let t =f.split(/(\d+)/g).filter(y=>((/\d+/.test(y))?y:'')).filter(x=>x);
+	let z=[],b=[];
+	t.forEach(x=>{z[+x]=1});
+	z.forEach((x,i)=>{if(x){b.push(i)}});//alert('')
+	b.reverse();
+	console.log(b);// нахуя реверсить б?
+	document.write(b+'('+b.length+')<br>');
+	document.write('-'.repeat(22)+'<br>');
+	document.write(f+'<br>');	
+	document.write('-'.repeat(22)+'<br>');	
+	let a='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'+
+	'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
+	b.forEach((x,i)=>{f=f.replaceAll(x,a[i]); console.log('='+x+'=')});
+console.log(f);     
+	f=f.replaceAll(' ','');		
+	f=f.replaceAll(',',', ');
+	f=f.replaceAll(':',': ');	
+
+	f=[...f]
+		//.map(i=>i.toUpperCase())завуалированная обрезка алфавита ненужна
+		.join('').replace(/([^\s]{35})/g,'$1 ');
+	document.write(f+'<br>');
+document.write('в доме пахло затхлостью и спиртным. тъкие запахи иногда держались по утрам и у них дома. после вечеринки накануне,  покамама не открывала настежь окна. правда,  тут было похуже. тут запахи въелисьи все собой пропитали. запахи алкоголя,  подгоревшего масла,  пота, старой одежды иеще лекарств - ментола и,  кажется,  валерьянки. в прихожей темнота, и рядом этот дюссандер - втянул голову в ворот,  этакий гриф--стервятник. ждуаий. когда раненое животное испустит дух.'+'<br>');	
+</script>   
+</body>
+</html>
