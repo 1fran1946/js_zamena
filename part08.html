@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- from 8 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,11 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href=
 "data:image/gif;base64,R0lGODlhEAAQAPcAAP///+nT3MRXeKUJN6IFMp4EMJ0FMK4kVdaTsO/v8uyfvOokcOkkbNseX9ckX8YZTK8PM6IANsUAXMgsgPDr8c9rjbMALbYAN7gRQbQMPKkHNKYCNKQFNcERaOIYh7gAWbUIW+7g692it68ALq8BN7EMQK8LQLMKPo0KN6USY9YSdN0chOgfjsgQb6AAOaANRe3q7u7n7LUCQLMAO7cNRrMMQrcMRLcLQmoHJ0QCJqQHSZsHSOEZi9cXgtMUeK8ASM+Jqd2Ls7gAR8UTZMMQYJMGRacHSKEHQnYDL3sBMsIMa4oAMdEVd9caf8YPb8UCZ882he5Bp+wUmPY/vqgbXk8AFZwCMNACTLoAPaIAMLsIXrYDVc0KbPgemPMaktcNd8MNafoXof8Io/8fxXgALV4AG+QFbOMAYb8AQoEAIEQAGSYAFCQAEEEAInIHQKsUYrgRZvgar/UTs/82044TSH4AHfUActMAUc0ASL0AV6QEcKQDdmABOkQAJSwAEx0ABzoAF/VOx/kvxf9w7uh4yZcAOPgUo9whmedApvq68OeT3XkAP1oAK1EAK0IAIjEAFTEAFPGO0PQVtPozy/9t6v2Z9/++//+8///d///L/7AtiVQAK2wCQFQCLyMABVknPu/m7tkAdfAmxOsYwPBJ2POC7/ig9/d/9/7F/fiY//t64P8vvvYrrb8KeqcAabuJpu/w8umXwugAlPBW4PJq6faS8/mz9/eD9/+z/+hT7eul4OQLd+IgfNcAdu8an+/r8e//+/OFyv9z7P919/x2+PqI+PqJ9/pb7fAlxPjC7tgAa9IHasENZenh5e398vSz8/ta+fxI+/uA/fmR+f9D+f4tz/u5784AZtQyg+vo7fHl8/W19/mc+flu8P5R7fxZ1vGu4Oe11wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAI/wABCAQQI0iUMHECRQIFa+BAETKESBEjR5CkULGAOawwYsaQKWPmDJokSlYwZwIVWCBBgwgVMnQIURo1S9gzAAEWXChRo0iVMnUKVSJFaxg0bQIYYDBhw4gVM3YMWSpVi1i0bQMaZDhx48iVM3cOXTJlq5g0bgQcaECBAwkWNHgQYTp1y9i0bgUebEiRI0mWNHkSAUCF6xg1bwYgcFChQ4kWNXoUZUqVC1m1bwcidFixY8mWNXsWaVKlK5k1cAgkeGDBgwkXNnwYbVq1S9m1cAkmfGjRo0mXNn0acWLFaxm2hhRAuPDhxIsbP446terFLNvAEC9+PPny5s8jT658NRFzCAAGEChg4ACC9OnVr4EBAQA7">
+	<link rel="icon" type="image/x-icon" href=     
+"data:image/gif;base64,R0lGODlhEAAQAOYAAO6C7tG2oc6ymbediKCLeZF8a39qWHNbSXtgTtuunsiqjHtdRW1PPWRGNlM1JD4hD6uahaCGcKGFbamReK+Vdq2TdqOGZY5wUINdPFI8J4d9a7KWfKGMea6UgLSbhrWafaiOcKKBYGxROfLKrMWliqyPc7Och76mjbCXfaWFYXtfRAAAAGhBJm87Hn9FJGw/HfnVt8GghsqhebGJaqyJaX9WOZlxSXtYPQAABJpzW4dcSYtTQW08JfjTtsSded+6l7mJcp50XH1KO1UlEVskHBUmMRgYFjIlHTwrIUg6K+3Ho7+Ub9e0kMenj7SQfpttTLGGVHlWNnVoWeK6mJ91WbeWe4hsW5N4Y9Grg+vCm5R6XWZdU+O9ocKXeqaBaVs2H5V5Ye/Eo+7Gp52BaLaeisWmh2tPOOK+oOjCn6OHbtG1mefBoKaKceW+nKiNdNKyk6iNdcW6paOLcQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQEewABACwAAAAAEAAQAAAHkoAAgoOEhYaHiImIKzhFioMsOUaIAQmDLTpHiAIKEIIuO0iIAwsRGgAvPElSW4YEDBIbIzA9SlNchgUNExwkMT5LVF1khQYOFB0lMj9MVV5lhQcPFR4mM0BNVl9mhQgAFh8nNEFOV2CIFyAoNUJPWGFnaoYYISk2Q1BZYmhrbW9xgzKIUHGDSBQtY9KwcQMHjpxAADs=">     
+  <title>Часть - 8</title>     
   <title>Шифр Простой Замены</title>
   <style>
+/*     
+^(.*\s{5})$ кончающиеся. уничтожить       
+бойся строк из табов!     
+*/     
+/*     
+Это первая часть сподвигнувшая программиста на дело мнoгочастного произведения     
+где есть все. Здесь принимается текст состаящий из цифр и, возможно,     
+знаков препинания. а пробелы-то там есть априори. Цифры разделены пробелами.     
+Сложность в том что числа могут быть хекс. Решить эту маленькую проблему да     
+поможет нам Бог. Это сделано очевидным способом.     
+Китайский ухилянт. Знает что ⼈⼰⼰⼈⼈⼰⼰⻏⻏⻏⻏⻏     
+Развитие китайской темы. Вопрос перетекает с иероглифики в руский,а потом в частотный ангельский. Без русского никак, ибо он не частотный. а ероглифо адаптирующий.     
+Делается разбив на процедуры     
+Это шестая серия игры в кальмары     
+Это седьмой вагон. версия стабильна в разумных пределах. на ноуте сдвиг небоскреба вверх.     
+Восьмая. строки вылезли за ватман(40).дурацки пофиксил увеличил м с 800 до 848пх
+*/     
   * {font-family: sans-serif;}
   *:not(hr), *::after, *::before {box-sizing: border-box;margin:0;padding:0;border:0}
   ul {list-style-type: none}
+#cpp{margin:auto;border:4px solid blue;width:50%;height:166px;border-radius:5px;}     
 .butt{
 	width:100px; aspect-ratio:1;transition-duration: 500ms;
 	transform-origin:center 50px;
@@ -72,6 +94,7 @@ nav {
 	padding: 33px 0;
 	background: linear-gradient(#64db69, #ded);
 	text-align: center;
+	/* нижний отступ дает скроллабельность */     
 	margin-bottom:1444px;
 	}
 #m1,#m2,#m3{
@@ -159,6 +182,8 @@ article{
 	flex-wrap: wrap;
 	width: 100%;
 	}
+#p0late{visibility:hidden}     
+/****************************/     
 .a:before{
 	content: '';
 	display:  block;
@@ -224,6 +249,10 @@ article{
   </style>
 </head>
 <body text="black" bgcolor=#ded>
+<a href="./html4/!h4.html">jan2025</a>     
+<a href="./html3/!dig3.html">aug2023</a>     
+<a href="./html2/!dig2.html">feb2023</a>     
+<a href="./html1/!dig1.html">dec2023</a>     
 <br>
 <nav>
 <!-- ************************************ -->
@@ -231,15 +260,27 @@ article{
 <div class="nkvd" style="height:59px;margin-bottom:2px;" 
 	onclick="
 		goho();//откат в палатки
+				/*ir['ru'].forEach((x,i)=>{// построить двиги шеренгой     
+				// ib платки, ir двиги     
+					x.style.top=ib['ru'][i].offsetTop+'px';     
+					x.style.left=ib['ru'][i].offsetLeft+'px';});     
+				ir['en'].forEach((x,i)=>{     
+					x.style.top=ib['en'][i].offsetTop+'px';     
+					x.style.left=ib['en'][i].offsetLeft+'px';});     
+					*/     
 		conny();// вывод деши
 ">
 <div class="horn2">reset</div>
 </div>
 <!-- ************************************ -->
 <div class="nkvd" style="height:59px" onclick="
+//cop.value=m2.innerText;//.replace(/(.{35})( )/g,'$1');     
+//35непробелов завершенное пробелом смотрится в высшей степени     
+// подозрительно, поэтому пробел удалить следует     
 	cop.value=m2.innerText.replace(/(\S{35})( )/g,'$1');
 	cop.select();
 	document.execCommand('copy');
+	//в случае наличия свойства оно меняется     
 	window.getSelection()?.removeAllRanges();
 ">
 <div class="horn2">copy</div>
@@ -260,8 +301,25 @@ article{
 <div class="horn">paste</div>
 </div>
 <!-- ************************************ -->
+<div class="nkvd">     
+<div class="butt" onclick="digman()">     
+OФ>98СяS"Y89"с"С`]Ф+уYyС,ФcФФкСS"+"p"с"С>"o`+СP"Y+уpСPУЪ+кСzpуР2+УoYyу+С2"L"ЪСLу2S"9у]9kЪСz"Ф2SСРу9усСФС2Уc"с"С2уLyЕСбс"С>УpУL"+ 9"ЪСzYУ+9kС2"oуpяу99"С9уС,oУ+Уу+С9УС9"pcУY8 9"уС2"Руp[У9ФуС[у9kСФСpуLу9SУeФ9oУYФРУЕС$Y" [9"уСЦФ9У92"o"уСz"Y"[у9ФуС>У2+УoYyу+Сус"Сz" РpУLУ+koУ+8С9УСc"ЪSуСУo+"c"LФYуЪЕСл"С"Р9У[Р kСo2уС2+У9"oФ+2yСу@уС,`[уЕС&`[]Ф9УС`>9Уу+кС]+"С2cуp+уY89"СL"Yу9ЕСPС9ус"С 9у"zуpУLуY89kЪСpУSСYусSФ,ЕСRpуz"РУoУ+уY8С2Y `]УЪ9"С`>9Уу+кС]+"С"РФ9СФ>Сус"СLkoяФ,С`]у9Ф S"oС>У9ФcУу+2yСzp"Ф>o"Р2+o"cСcу+УcЦу+УcФ9УЕ СP"Y+уpС9У,"РФ+СE[у22ФСRФ9ScУ9УЕС&"Y"Р"ЪС]уY"oуSСzpуSpУ29"С>9Уу+кСSУSСpУL"+Уу+ Сж+"+С9у>УS"99kЪСLФ>9у2кСУСzpуSpУ29kЪС,ФcФSСP"Y+уpСc"[у+СФ>с"+"oФ+8С]Ф2+kЪСSУ]у2+oу99kЪСzp"Р`S+ЕС&`[]Ф9УСpУ22]Ф+koУу+С"2+УoФ+8С2o"уЪС2уc8уС2+"Y8S"СРу9ускС]+"LkСФcС,oУ+УY"С9УСo2укСS"сРУСус"С9уС2+У9у+ЕСлУzУp9ФSФС`у>[УО+Сz"РУY8яуС"+Сс"p"РУкСoСz`2+k9ОкСсРуСс"+"oy+С2Уc`ОСzуpo`ОСzУp+ФОС+"oУpУЕСл"СcУY"Сzp"2+"СzpФс"+"oФ+8С9УpS"+ФSкСус"Су@уС+pуL`у+2yСzp"РУ+8Сz"Р"p"[уЕ     
+</div>     
+<div class="horn">paste</div>     
+</div>     
 </nav>
 <textarea id="cop">для копирования</textarea>
+<!-- center>     
+<textarea id="cpp">⺁⺂⺃⺄ 阿 贝非给非⺃⺁ 得⺃⺄也非 非⺃⺁贝用 非也⺄贝热赛 伊⺃⺁得可罗⺄给得非 也罗非阿肯非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄, 可热 ⺂哦用⺂⺃ 得⺃⺄也非 哦⺁贝佩⺁可⺂佩 贝非 也罗热可⺄阿热也热⺃热恩贝用赛. 了非给⺁哦 阿用罗⺁了非⺃⺄ 伊可热可 伊也⺄了热肯 ⺄ 也罗非阿肯非 ⺃⺄, 给可热 得热艾肯非 ⺂贝⺄哦非⺃⺄ 得⺃⺄也 阿 贝非给非⺃⺁ 得⺃⺄也非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄?     
+</textarea></center -->     
+<!--     
+<center>     
+<textarea id="cpp">     
+⺁⺂⺃⺄ 阿 贝非给非⺃⺁ 得⺃⺄也非 非⺃⺁贝用 非也⺄贝热赛 伊⺃⺁得可罗⺄给得非 也罗非阿肯非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄, 可热 ⺂哦用⺂⺃ 得⺃⺄也非 哦⺁贝佩⺁可⺂佩 贝非 也罗热可⺄阿热也热⺃热恩贝用赛. 了非给⺁哦 阿用罗⺁了非⺃⺄ 伊可热可 伊也⺄了热肯 ⺄ 也罗非阿肯非 ⺃⺄, 给可热 得热艾肯非 ⺂贝⺄哦非⺃⺄ 得⺃⺄也 阿 贝非给非⺃⺁ 得⺃⺄也非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄?     
+</textarea></center>     
+<textarea id="cop">111     
+</textarea>     
+-->     
 <div id="india">
 		<article>
 			<div id="m3"></div>
@@ -277,6 +335,7 @@ article{
 <button id="graf" onclick="
 	russ=!russ;//
 	this.innerHTML=['ru','en'][+!russ];
+	//ir['ru'].style.visibility=russ?'visible':'hidden';     
 	ruid.style.visibility=russ?'visible':'hidden';
 	enid.style.visibility=!russ?'visible':'hidden';
 	conny();//nomruss
@@ -328,6 +387,9 @@ function dragElement(ass) {//Make the DIV element draggagle:
 		}
 }
 function dvigs(){
+/*     
+разбиваем палаточный городок     
+*/     
 platr.innerHTML=ufru.map((x,i)=>
 	'<div class="ivan iba1" style="'+
 	'visibility:hidden;'+'height:'+
@@ -338,11 +400,19 @@ plate.innerHTML=ufen.map((x,i)=>
 	'visibility:hidden;'+'height:'+
 	((Object.values(x)[0]/3+21)|0)+'px;">'+
 	(Object.keys(x)[0])+'</div>').join('');
+/*fa - форма которая представляет собой ниибический контейнер для двигов     
+двигами я называю таскаемые блоки, мышью их можно хватать и тащить     
+ru en в виде айди и классов нах вообще?     
+заранее расставленые палатки, дают шанс загнать туда эти сраные двиги     
+*/     
 fa.innerHTML=[
 		'\n<div id="ruid" style="visibility:'
 		+(russ?'visible':'hidden')+'">\n'+//
 		ufru.map((x,i)=>   //
 			'<div class="ivan ira1" data-s="'+''+'" style="height:'+
+			/*21 это мин высота двига. а то появятся блоки     
+			однопиксельной высоты для редковстречаемых элов,     
+			в рот я ебал такое счастье*/     
 			((Object.values(x)[0]+21)|0)+
 			'px;">'+
 			(Object.keys(x)[0])+'</div>\n').join('')+'</div>\n',
@@ -350,14 +420,23 @@ fa.innerHTML=[
 		+(russ?'hidden':'visible')+'">\n'+//  voke
 		ufen.map((x,i)=>
 			'<div class="ivan ira2" style="height:'+
+			/*дабы несмущать неокрепшие умы     
+			Math.round(zet[1]['fq'][zet[1]['af'].indexOf(x)]/3+21)+     
+			*/     
 			((Object.values(x)[0]/3+21)|0)+
 			'px;">'+//
 			(Object.keys(x)[0])+'</div>\n').join('')+'</div>\n',
 	].join('');
 }
+/*     
+let rrr='если в начале клипа алены апиной электричка правда был эпизод, как клоуна предупреждали, то смысл клипа меняется на противоположный. зачем вырезали этот эпизод и правда ли, что когда снимали клип в начале клипа был эпизод, как клоуна предупреждали?';     
+*/     
+//let yap='⺁⺂⺃⺄阿贝非给得也用热赛伊可罗肯卡了姆恩哦佩艾和斯泰吴弗哈册切沙夏路迪斯尼亚克俄尼诶哟';     
+//хабахара='ンワラヤマハナタサカアリミヒニチシキイルユムフヌツスクウレメヘネテセケエヲロヨモホノトソコオ';     
 //избавляемся от знакаов препинпнания
 let masa;
 let masa2;
+ //      РаботюрукмингвжсяейдхьлчызпЧ     
 let aa1='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'+
 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
 const unita=x=>{
@@ -374,6 +453,7 @@ const unita2=x=>{
 	}
 const unita3=x=>{
 	j=unita(x);
+	//[...j].forEach((c,k)=>{x=x.replaceAll(c,aa1[k])});     
 	let s='';
 	for(let i=0;i<x.length;i++){
 		let k=j.indexOf(x[i])+1;
@@ -427,6 +507,7 @@ function digman(){//цифры в русские
 			}
 		t=t.split(/(\d+|\S)/g);
 		masa=unidi(t);console.log(masa);
+		//masa=[...masa];     
 		masa2=unidi2(t);//let
 		masa3=unidi3(t);
 		mainway(masa3);
@@ -435,25 +516,78 @@ function digman(){//цифры в русские
 		console.log('Oblomingo flyed pass', err);
 		});
 	}
+/*let ffb=unita(rrr).join('');     
+[...' ,?.'].forEach(c=>{ffb=ffb.replaceAll(c,'')});     
+console.log(ffb);     
+document.write(ffb+'<br>'+ffb.length+' '+'<br>');     
++yap.length+     
+let yt=new String(rrr);     
+[...ffb].forEach((c,i)=>{yt=yt.replaceAll(c,yap[i])});     
+document.write(yt+'<br>');     
+*/     
+//****н     
+// begins mainway()     
 function mainway(text){
 	let masa35=text;//masa3;
+	console.log('masa35='+masa35);     
 	[...' ,?.\n'].forEach(c=>{masa35=masa35.replaceAll(c,'')});
+	console.log('masa35='+masa35);     
 	let masa4=[...masa35].reduce((a,x)=>{
+	//a[x]=~~a[x]+1;     
 	a.hasOwnProperty(x)?a[x]++:a[x]=1;
 	return a},{});
+	{let s=[];     
+	for(let k in masa4){     
+	s.push(`'${k}':${masa4[k]}`);     
+	}     
+	s='{'+s.join(',')+'}';     
+	console.log('masa4='+s);     
+	}     
 	let masa5=[];
+	let masa6=[];     
 	for(let p in masa4){
 	masa5.push({'buk':p,'num':masa4[p],'ero':masa2[p]});
+	let s=`{'buk':`+p+`,'num':`+masa4[p]+`,'ero':`+masa2[p]+`}`;     
+	console.log(s);     
+	masa6.push(s);     
 	}
+	console.log('masa6=['+masa6.join(',')+']');     
+	//let masa7=masa5.sort((a,b)=>Object.keys(b)['num']-Object.keys(a)['num']);     
 	let m777=masa5.sort((a,b)=>b['num']-a['num']);
+	//let nim='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';// имена     
 	m777=m777.map((c,i)=>{c['nim']=nim[i]; return c});
+	const writ=x=>{     
+	return '['+x.map(c=>`{'buk':`+c['buk']+`,'num':`+c['num']+`,'ero':`+c['ero']+`,'nim':`+c['nim']+`}`).join(',')+']';     
+	}     
+	console.log('m777='+writ(m777));     
+	///document.write('m777='+writ(m777));     
+	///document.write('<hr>');     
 	let t2=new String(masa3);
 	m777.forEach((c,i)=>{t2=t2.replaceAll(c['buk'],c['nim'])});
+	console.log('t2='+t2);     
+	///document.write('t2='+t2);     
+	//********     
+	//оставил только руские буквы     
+	//let ork=[...t2].filter(x=>alfr.indexOf(x)>-1);     
+		/*let pepe=new Set(ork);     
+		pepe=Array.from(pepe).join('');//     
+		console.log('pepe='+pepe);     
+		const qua=ork.reduce((a,x)=>{a[x]=~~a[x]+1;return a},{});// частота     
+		*/     
+		//последствием такой операции будет типа	     //{и:1,Ф:35,Э:45,П:14,Ш:15,И:33,Щ:29,Р:9,Ю:53,С:29,Ь:28,Д:11,Ц:50,Ж:19,Ч:2,Б:23,Ы:12,Х:22,А:3,Г:19,О:1,К:9,Л:10,Н:6,Т:13,М:7,В:13,У:7,Я:2,Е:1}     
+	//let abb=[];     
+	//	for(let i in qua) abb.push({[i]:qua[i]});     
+	//	abb=abb.sort((a,b)=>Object.values(b)[0]-Object.values(a)[0]);	//abb=[{Ю:53},{Ц:50},{Э:45},{Ф:35},{И:33},{Щ:29},{С:29},{Ь:28},{Б:23},{Х:22},{Ж:19},{Г:19},{Ш:15},{П:14},{Т:13},{В:13},{Ы:12},{Д:11},{Л:10},{Р:9},{К:9},{М:7},{У:7},{Н:6},{А:3},{Ч:2},{Я:2},{и:1},{О:1},{Е:1}]     
+	//abb.forEach((x)=>{wip+=Object.keys(x)[0]});//сортированный шифротекест     
 	dvigs();//палатки и двиги создать
 	wip=m777.map(c=>c['ero']);
+	//abb.forEach((x)=>{cro.push(+Object.values(x)[0])});//     
 	cro=m777.map(c=>c['num']);
+	//let     
 	ss2=[...t2].map(x=>(wip.indexOf(x)>-1)?nim[wip.indexOf(x)]:x).join('');
 	tuki=nim.slice(0,masa.length); // имена небоскребов (строка)
+	console.log('m777:'+m777.length);     
+	console.log('tuki:'+tuki);     
 		const booa=[...nim].map(x=>{/// однобукыенные слова
 			let e=new RegExp('\\b'+x+'\\b','g');
 			return e.test(ss2);
@@ -462,20 +596,30 @@ function mainway(text){
 			let e=new RegExp(x+x);
 			return e.test(ss2);
 			});
+		//let iq4=     
 		fa.innerHTML+=[...tuki].map((x,i)=>//аддитивное обьединение двух колод - небоскребы и буквы
 		'<div class="sky'+//fieldset
 		`${(booa[i])?' a':''}`+ //вертикальный штрих
 		`${(boob[i])?' b':''}`+ // горизонтальн штрих
 		'" data-v="'+wip[i]+
 			'" style="left:'+(i*46)+'px">'+x+'<div class="alen">'+wip[i]+'</div></div>\n').join('');
+	//iq4;     
 		nebo=document.querySelectorAll('.sky');
+	//console.log(cro);//.join(' ')     
 	{
 		let kin=false;
+		//наибольшее число в лежит в cro[0]     
 		if(cro.length){kin=cro[0]>0}//избавление от нулей
+		//танец с бубном чтоб не делить на ноль в случае когда в cro одни нули     
+		//ясно одно hi высотты берутся-вычисляюца из cro     
 		hi=kin?cro.map((x,i)=>`${43+cro[i]*400/cro[0]|0}px`):cro.map(x=>'223px');
 	}
 	//console.log(hi.join(' '));
 	[...nebo].forEach((x,i)=>{x.style.height=hi[i]});// высота небоскребов
+	// в форму с небоскребами потом запихивают колоды, а вот нахуя?     
+	//коорды всех участников движения, чтоб коллизии пасти-мониторить     
+		//*************************     
+		//подвижность добавляем после построения дом        
 		ir={
 			ru:[...document.querySelectorAll('.ira1')],
 			en:[...document.querySelectorAll('.ira2')],
@@ -484,7 +628,10 @@ function mainway(text){
 			ru:[...document.querySelectorAll('.iba1')],
 			en:[...document.querySelectorAll('.iba2')],
 		};// неподвижные элементы
+		// размещение по палаткам     
 		goho();//откат в палатки
+		// придание подвижности     
+		//от так вроде короче     
 		ir['ru'].forEach(c=>{dragElement(c)});
 		ir['en'].forEach(c=>{dragElement(c)});
 	function goho(){//откат в палатки
@@ -509,6 +656,9 @@ function mainway(text){
 	sit();
 	conny();
 	}// ends mainway()
+//--------------------------------------------     
+ //eroman();//ероглифы в русские     
+//****     
 let fb="⺁⺂⺃⺄ 阿 贝非给非⺃⺁ 得⺃⺄也非 非⺃⺁贝用 非也⺄贝热赛 伊⺃⺁得可罗⺄给得非 也罗非阿肯非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄, 可热 ⺂哦用⺂⺃ 得⺃⺄也非 哦⺁贝佩⺁可⺂佩 贝非 也罗热可⺄阿热也热⺃热恩贝用赛. 了非给⺁哦 阿用罗⺁了非⺃⺄ 伊可热可 伊也⺄了热肯 ⺄ 也罗非阿肯非 ⺃⺄, 给可热 得热艾肯非 ⺂贝⺄哦非⺃⺄ 得⺃⺄也 阿 贝非给非⺃⺁ 得⺃⺄也非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄?";
 masa=unita(fb);
 masa=[...masa];
@@ -518,10 +668,17 @@ mainway(masa3);
 //------------------------------------------------
 function conny(){// вывод деши
 	pok=['en','ru'][+russ];
+	//console.log(tuki);     
+	//console.log(pok);     
+	//ooo инфа по ебучим небоскребам, на какую букву менять.     
+	//изначально . типа на точку     
 	let ooo=[...tuki].reduce((a,x)=>{a[x]='.'; return a},{});
+	//console.log(ooo);//{A: 'Е', B: '.', C: '.',     
+	//каждый член русской колоды     
 	[...ir[pok]].forEach((x,i)=>{//'ru' 'en' колоды
 		let v=x.offsetLeft+ 12;
 		let w=x.getBoundingClientRect().top+20;
+		//меняем на букву, которая залезла на небоскреб     
 		let b=x.innerText;
 		for(let j=0; j<tuki.length; j++){//в какую башню попал
 			if((w>ws[j].y1)&&
@@ -530,9 +687,12 @@ function conny(){// вывод деши
 			(v<ws[j].x2)) ooo[tuki[j]]=b;
 			}
 		});
+		/**/     
 	m1.innerHTML=[...ss2].map(x=>x).join('');//DAS
 	m2.innerHTML=[...ss2].map(x=>(x in ooo)?ooo[x]:x).join('');
 	m3.innerHTML=m2.innerHTML;
+	//console.log(ooo);     
+	//console.log(nebo.length);     
 	}
 </script>
 </body>
