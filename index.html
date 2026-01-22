@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <!-- from 7a + 800 > 848px -->
+<!-- узкий пробел &#8201; (или &thinsp;) -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,6 +11,7 @@
 "data:image/gif;base64,R0lGODlhEAAQAPcAAP///+nT3MRXeKUJN6IFMp4EMJ0FMK4kVdaTsO/v8uyfvOokcOkkbNseX9ckX8YZTK8PM6IANsUAXMgsgPDr8c9rjbMALbYAN7gRQbQMPKkHNKYCNKQFNcERaOIYh7gAWbUIW+7g692it68ALq8BN7EMQK8LQLMKPo0KN6USY9YSdN0chOgfjsgQb6AAOaANRe3q7u7n7LUCQLMAO7cNRrMMQrcMRLcLQmoHJ0QCJqQHSZsHSOEZi9cXgtMUeK8ASM+Jqd2Ls7gAR8UTZMMQYJMGRacHSKEHQnYDL3sBMsIMa4oAMdEVd9caf8YPb8UCZ882he5Bp+wUmPY/vqgbXk8AFZwCMNACTLoAPaIAMLsIXrYDVc0KbPgemPMaktcNd8MNafoXof8Io/8fxXgALV4AG+QFbOMAYb8AQoEAIEQAGSYAFCQAEEEAInIHQKsUYrgRZvgar/UTs/82044TSH4AHfUActMAUc0ASL0AV6QEcKQDdmABOkQAJSwAEx0ABzoAF/VOx/kvxf9w7uh4yZcAOPgUo9whmedApvq68OeT3XkAP1oAK1EAK0IAIjEAFTEAFPGO0PQVtPozy/9t6v2Z9/++//+8///d///L/7AtiVQAK2wCQFQCLyMABVknPu/m7tkAdfAmxOsYwPBJ2POC7/ig9/d/9/7F/fiY//t64P8vvvYrrb8KeqcAabuJpu/w8umXwugAlPBW4PJq6faS8/mz9/eD9/+z/+hT7eul4OQLd+IgfNcAdu8an+/r8e//+/OFyv9z7P919/x2+PqI+PqJ9/pb7fAlxPjC7tgAa9IHasENZenh5e398vSz8/ta+fxI+/uA/fmR+f9D+f4tz/u5784AZtQyg+vo7fHl8/W19/mc+flu8P5R7fxZ1vGu4Oe11wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFewAAACwAAAAAEAAQAAAI/wABCAQQI0iUMHECRQIFa+BAETKESBEjR5CkULGAOawwYsaQKWPmDJokSlYwZwIVWCBBgwgVMnQIURo1S9gzAAEWXChRo0iVMnUKVSJFaxg0bQIYYDBhw4gVM3YMWSpVi1i0bQMaZDhx48iVM3cOXTJlq5g0bgQcaECBAwkWNHgQYTp1y9i0bgUebEiRI0mWNHkSAUCF6xg1bwYgcFChQ4kWNXoUZUqVC1m1bwcidFixY8mWNXsWaVKlK5k1cAgkeGDBgwkXNnwYbVq1S9m1cAkmfGjRo0mXNn0acWLFaxm2hhRAuPDhxIsbP446terFLNvAEC9+PPny5s8jT658NRFzCAAGEChg4ACC9OnVr4EBAQA7">
   <title>Шифр Простой Замены</title>
   <style>
+  * {user-select:none}
   * {font-family: sans-serif;}
   *:not(hr), *::after, *::before {box-sizing: border-box;margin:0;padding:0;border:0}
   ul {list-style-type: none}
@@ -57,7 +59,7 @@ nav {
 	padding:5px;
 	display:flex;
 	}
-#fa{
+#fall{
 	width: 100%;
 	height: 444px;
 	background: transparent;
@@ -239,7 +241,14 @@ article{
 </div>
 <!-- ************************************ -->
 <div class="nkvd" style="height:59px" onclick="
-	cop.value=m2.innerText.replace(/(\S{35})( )/g,'$1');
+
+	cop.value=svit;
+	//cop.value=svit.replaceAll('&#8201;','');
+	
+	//console.log(svit);
+	//console.log(svit.replaceAll(/(&#8201;\n)/g,'*'));
+	
+	/*console.log(cop.value);*/
 	cop.select();
 	document.execCommand('copy');
 	window.getSelection()?.removeAllRanges();
@@ -275,7 +284,7 @@ article{
 			<div id="plate"></div>
 		</div>
 </div>
-<div id="fa"></div>
+<div id="fall"></div>
 <button id="graf" onclick="
 	russ=!russ;//
 	this.innerHTML=['ru','en'][+!russ];
@@ -285,13 +294,14 @@ article{
 ">ru</button>
 <script>
 var russ=true; graf.innerHTML=['ru','en'][+!russ];
-var ir,ib;
+var boy,girl;
 let ws;// коорды размеры башен
 let nebo,hi;
 let nim='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';// имена небоскребов
 let wip='';//сортированный шифротекест
 let cro=[];
-let ss2;
+let dior;
+let svit;// для копи
 const alfr='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 ufru=[{'А':21},{'Б':7},{'В':14},{'Г':4},{'Д':9},{'Е':34},{'Ё':0},{'Ж':4},{'З':12},{'И':21},{'Й':11},{'К':11},{'Л':12},{'М':16},{'Н':35},{'О':38},{'П':8},{'Р':12},{'С':18},{'Т':19},{'У':8},{'Ф':2},{'Х':5},{'Ц':1},{'Ч':4},{'Ш':3},{'Щ':2},{'Ъ':0},{'Ы':13},{'Ь':3},{'Э':0},{'Ю':0},{'Я':11}];
 ufru.push({'_':46});
@@ -300,7 +310,7 @@ ufen=[{'A':82},{'B':15},{'C':28},{'D':43},{'E':127},{'F':22},{'G':20},{'H':61},{
 ufru=ufru.sort((a,b)=>Object.values(b)[0]-Object.values(a)[0]);
 ufen=ufen.sort((a,b)=>Object.values(b)[0]-Object.values(a)[0]);
 function dragElement(ass) {//Make the DIV element draggagle:
-	var poss2 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+	var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 	ass.onmousedown = dragMouseDown;
 	function dragMouseDown(e) {
 		e = e || window.event;
@@ -314,13 +324,13 @@ function dragElement(ass) {//Make the DIV element draggagle:
 	function elementDrag(e) {
 		e = e || window.event;
 		// calculate the new cursor position:
-		poss2 = pos3 - e.clientX;
+		pos1 = pos3 - e.clientX;
 		pos2 = pos4 - e.clientY;
 		pos3 = e.clientX;
 		pos4 = e.clientY;
 		// set the element's new position:
 		ass.style.top = (ass.offsetTop - pos2) + "px";
-		ass.style.left = (ass.offsetLeft - poss2) + "px";
+		ass.style.left = (ass.offsetLeft - pos1) + "px";
 		}
 	function closeDragElement() {
 		/* stop moving when mouse button is released:*/
@@ -340,7 +350,7 @@ plate.innerHTML=ufen.map((x,i)=>
 	'visibility:hidden;'+'height:'+
 	((Object.values(x)[0]/3+21)|0)+'px;">'+
 	(Object.keys(x)[0])+'</div>').join('');
-fa.innerHTML=[
+fall.innerHTML=[
 		'\n<div id="ruid" style="visibility:'
 		+(russ?'visible':'hidden')+'">\n'+//
 		ufru.map((x,i)=>   //
@@ -359,44 +369,45 @@ fa.innerHTML=[
 }
 //избавляемся от знакаов препинпнания
 let masa;
-let masa2;
-let aa1='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'+
-'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
-let fire=' ,?.\n!\t\r';
-const unita=x=>{
+let psih;
+let okita=('АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'+
+'абвгдеёжзийклмнопрстуфхцчшщъыьэюя').split('');
+let fire=' ,?.\n!\t\r';//—
+let limon=39;// макс длина строки
+const unita1=x=>{
 	let i=new Set(x);
 	x=Array.from(i).join('');
 	[...fire].forEach(c=>{x=x.replaceAll(c,'')});//
 	return x;
 	}
 const unita2=x=>{
-	j=unita(x);
+	j=unita1(x);
 	return [...j].reduce((acc,x,k)=>{
-	acc[aa1[k]]=x;
+	acc[okita[k]]=x;
 	return acc},{});
 	}
 const unita3=x=>{
-	j=unita(x);
+	j=unita1(x);
 	let s='';
 	for(let i=0;i<x.length;i++){
 		let k=j.indexOf(x[i])+1;
-		s+=k?aa1[k-1]:x[i];}
+		s+=k?okita[k-1]:x[i];}
 	return s;
 	}
-const unidi=x=>{
+const unidi1=x=>{
 	let i=new Set(x.filter(c=>/\d+/.test(c)));
 	return Array.from(i).sort();
 	}
 const unidi2=x=>{
-	j=unidi(x);
+	j=unidi1(x);
 	return j.reduce((acc,c,k)=>{
-	acc[aa1[k]]=c;
+	acc[okita[k]]=c;
 	return acc},{});
 	}
 const unidi3=x=>{
-	j=unidi(x);
+	j=unidi1(x);
 	x=x.join(' ');
-	j.forEach((c,i)=>x=x.replaceAll(c,aa1[i]));// цифра в букву
+	j.forEach((c,i)=>x=x.replaceAll(c,okita[i]));// цифра в букву
 	x=x.replaceAll('    ','_');
 	x=x.replaceAll(' ','');
 	x=x.replaceAll(',',', ');
@@ -408,9 +419,9 @@ const unidi3=x=>{
 function eroman(){//ероглифы в русские
 	navigator.clipboard.readText()
 		.then(fb => {
-		masa=unita(fb);console.log(masa);
+		masa=unita1(fb);//console.log(masa);
 		masa=[...masa];
-		masa2=unita2(fb);//let
+		psih=unita2(fb);//let
 		masa3=unita3(fb);
 		mainway(masa3);		
 		})
@@ -429,8 +440,8 @@ function digman(){//цифры в русские
 			t=t.join(' ');
 			}
 		t=t.split(/(\d+|\S)/g);
-		masa=unidi(t);console.log(masa);
-		masa2=unidi2(t);//let
+		masa=unidi1(t);//console.log(masa);
+		psih=unidi2(t);//let
 		masa3=unidi3(t);
 		mainway(masa3);
 		})
@@ -439,39 +450,42 @@ function digman(){//цифры в русские
 		});
 	}
 function mainway(text){
-	let masa35=text;//masa3;
-	[...fire].forEach(c=>{masa35=masa35.replaceAll(c,'')});
-	let masa4=[...masa35].reduce((a,x)=>{
-	a.hasOwnProperty(x)?a[x]++:a[x]=1;
-	return a},{});
-	let masa5=[];
-	for(let p in masa4){
-	masa5.push({'buk':p,'num':masa4[p],'ero':masa2[p]});
+	let bart=text;//masa3;
+	[...fire].forEach(c=>{bart=bart.replaceAll(c,'')});
+	let risk=[...bart].reduce((a,x)=>{
+		a.hasOwnProperty(x)?a[x]++:a[x]=1;
+		return a},{});
+	let teraj=[];
+	for(let p in risk){
+	teraj.push({'buk':p,'num':risk[p],'ero':psih[p]});
 	}
-	let m777=masa5.sort((a,b)=>b['num']-a['num']);
-	m777=m777.map((c,i)=>{c['nim']=nim[i]; return c});
-	let t2=new String(masa3);
-	m777.forEach((c,i)=>{t2=t2.replaceAll(c['buk'],c['nim'])});
+	let neyr=teraj.sort((a,b)=>b['num']-a['num']);
+	neyr=neyr.map((c,i)=>{c['nim']=nim[i]; return c});
+	let tref=new String(masa3);
+	neyr.forEach((c,i)=>{tref=tref.replaceAll(c['buk'],c['nim'])});
 	dvigs();//палатки и двиги создать
-	wip=m777.map(c=>c['ero']);
-	cro=m777.map(c=>c['num']);
-	ss2=[...t2].map(x=>(wip.indexOf(x)>-1)?nim[wip.indexOf(x)]:x).join('');
-	tuki=nim.slice(0,masa.length); // имена небоскребов (строка)
+	wip=neyr.map(c=>c['ero']);
+	cro=neyr.map(c=>c['num']);
+	dior=[...tref].map(x=>(wip.indexOf(x)>-1)?nim[wip.indexOf(x)]:x).join('');
+	twin=nim.slice(0,masa.length); // имена небоскребов (строка)
 		const booa=[...nim].map(x=>{/// однобукыенные слова
 			let e=new RegExp('\\b'+x+'\\b','g');
-			return e.test(ss2);
+			return e.test(dior);
 			});
 		const boob=[...nim].map(x=>{/// удвойенные буквы
 			let e=new RegExp(x+x);
-			return e.test(ss2);
+			return e.test(dior);
 			});
-		fa.innerHTML+=[...tuki].map((x,i)=>//аддитивное обьединение двух колод - небоскребы и буквы
+		fall.innerHTML+=[...twin].map((x,i)=>//аддитивное обьединение двух колод - небоскребы и буквы
 		'<div class="sky'+//fieldset
 		`${(booa[i])?' a':''}`+ //вертикальный штрих
 		`${(boob[i])?' b':''}`+ // горизонтальн штрих
 		'" data-v="'+wip[i]+
 			'" style="left:'+(i*46)+'px">'+x+'<div class="alen">'+wip[i]+'</div></div>\n').join('');
 		nebo=document.querySelectorAll('.sky');
+	
+	const lime= new RegExp('(\\S{'+limon+'})', 'g');//удвоеный слеш зарешал
+	dior=dior.replaceAll(lime,'$1&#8201;\n');  // dior=dior.replaceAll('&#8201;','');
 	{
 		let kin=false;
 		if(cro.length){kin=cro[0]>0}//избавление от нулей
@@ -479,25 +493,25 @@ function mainway(text){
 	}
 	//console.log(hi.join(' '));
 	[...nebo].forEach((x,i)=>{x.style.height=hi[i]});// высота небоскребов
-		ir={
+		boy={
 			ru:[...document.querySelectorAll('.ira1')],
 			en:[...document.querySelectorAll('.ira2')],
 		};// подвижные элементы
-		ib={
+		girl={
 			ru:[...document.querySelectorAll('.iba1')],
 			en:[...document.querySelectorAll('.iba2')],
 		};// неподвижные элементы
 		goho();//откат в палатки
-		ir['ru'].forEach(c=>{dragElement(c)});
-		ir['en'].forEach(c=>{dragElement(c)});
+		boy['ru'].forEach(c=>{dragElement(c)});
+		boy['en'].forEach(c=>{dragElement(c)});
 	function goho(){//откат в палатки
-		ir['ru'].forEach((x,i)=>{
-			x.style.left = ib['ru'][i].offsetLeft+'px';
-			x.style.top = ib['ru'][i].offsetTop+'px';
+		boy['ru'].forEach((x,i)=>{
+			x.style.left = girl['ru'][i].offsetLeft+'px';
+			x.style.top = girl['ru'][i].offsetTop+'px';
 			});
-		ir['en'].forEach((x,i)=>{
-			x.style.left = ib['en'][i].offsetLeft+'px';
-			x.style.top = ib['en'][i].offsetTop+'px';
+		boy['en'].forEach((x,i)=>{
+			x.style.left = girl['en'][i].offsetLeft+'px';
+			x.style.top = girl['en'][i].offsetTop+'px';
 			});
 	}
 	const sit=()=>{
@@ -513,29 +527,34 @@ function mainway(text){
 	conny();
 	}// ends mainway()
 let fb="⺁⺂⺃⺄ 阿 贝非给非⺃⺁ 得⺃⺄也非 非⺃⺁贝用 非也⺄贝热赛 伊⺃⺁得可罗⺄给得非 也罗非阿肯非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄, 可热 ⺂哦用⺂⺃ 得⺃⺄也非 哦⺁贝佩⺁可⺂佩 贝非 也罗热可⺄阿热也热⺃热恩贝用赛. 了非给⺁哦 阿用罗⺁了非⺃⺄ 伊可热可 伊也⺄了热肯 ⺄ 也罗非阿肯非 ⺃⺄, 给可热 得热艾肯非 ⺂贝⺄哦非⺃⺄ 得⺃⺄也 阿 贝非给非⺃⺁ 得⺃⺄也非 卡用⺃ 伊也⺄了热肯, 得非得 得⺃热姆贝非 也罗⺁肯姆也罗⺁恩肯非⺃⺄?";
-masa=unita(fb);
+
+//fb="беги\nлолалололололололололололололололоолололлолллололололололололол\nбеги";
+masa=unita1(fb);
 masa=[...masa];
-masa2=unita2(fb);
+psih=unita2(fb);
 masa3=unita3(fb);
 mainway(masa3);
 //------------------------------------------------
 function conny(){// вывод деши
 	pok=['en','ru'][+russ];
-	let ooo=[...tuki].reduce((a,x)=>{a[x]='.'; return a},{});
-	[...ir[pok]].forEach((x,i)=>{//'ru' 'en' колоды
+	let ooo=[...twin].reduce((a,x)=>{a[x]='.'; return a},{});
+	[...boy[pok]].forEach((x,i)=>{//'ru' 'en' колоды
 		let v=x.offsetLeft+ 12;
 		let w=x.getBoundingClientRect().top+20;
 		let b=x.innerText;
-		for(let j=0; j<tuki.length; j++){//в какую башню попал
+		for(let j=0; j<twin.length; j++){//в какую башню попал
 			if((w>ws[j].y1)&&
 			(w<ws[j].y2)&&
 			(v>ws[j].x1)&&
-			(v<ws[j].x2)) ooo[tuki[j]]=b;
+			(v<ws[j].x2)) ooo[twin[j]]=b;
 			}
 		});
-	m1.innerHTML=[...ss2].map(x=>x).join('');//DAS
-	m2.innerHTML=[...ss2].map(x=>(x in ooo)?ooo[x]:x).join('');
+	m1.innerHTML=[...dior].map(x=>x).join('');//DAS
+	svit=[...dior].map(x=>(x in ooo)?ooo[x]:x).join('');//х.й
+	m2.innerHTML=svit;
 	m3.innerHTML=m2.innerHTML;
+	svit=svit.replaceAll('&#8201;\n','');// делаю замену не пропуская через визуализацию
+	//console.log('svit='+svit);
 	}
 </script>
 </body>
