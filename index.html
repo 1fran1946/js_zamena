@@ -74,7 +74,7 @@ nav {
 	}
 #india{
 	padding: 33px 0;
-	background: linear-gradient(#64db69, #ded);
+	background: linear-gradient(#7748a9, #ded);
 	text-align: center;
 	margin-bottom:1444px;
 	}
@@ -228,7 +228,7 @@ article{
   </style>
 </head>
 <body text="black" bgcolor=#ded>
-<br>
+
 <nav>
 <!-- ************************************ -->
 <div>
@@ -297,11 +297,12 @@ var russ=true; graf.innerHTML=['ru','en'][+russ];
 var boy,girl;
 let ws;// коорды размеры башен
 let nebo,hi;
-let nim='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';// имена небоскребов
+let abc='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';// имена небоскребов, белфавит
 let wip='';//сортированный шифротекест
-let cro=[];
-let dior;
+let cro=[];// высоты небоскребов
+let dior;// для визуализация
 let svit;// для копи
+let belf='';// строка на белфе
 const alfr='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 ufru=[{'А':21},{'Б':7},{'В':14},{'Г':4},{'Д':9},{'Е':34},{'Ё':0},{'Ж':4},{'З':12},{'И':21},{'Й':11},{'К':11},{'Л':12},{'М':16},{'Н':35},{'О':38},{'П':8},{'Р':12},{'С':18},{'Т':19},{'У':8},{'Ф':2},{'Х':5},{'Ц':1},{'Ч':4},{'Ш':3},{'Щ':2},{'Ъ':0},{'Ы':13},{'Ь':3},{'Э':0},{'Ю':0},{'Я':11}];
 ufru.push({'_':46});
@@ -378,16 +379,17 @@ const unita1=x=>{
 	let i=new Set(x);
 	x=Array.from(i).join('');
 	[...fire].forEach(c=>{x=x.replaceAll(c,'')});//
-	return x;
+	return [...x];
 	}
 const unita2=x=>{
 	j=unita1(x);
-	return [...j].reduce((acc,x,k)=>{
+	return j.reduce((acc,x,k)=>{
+	//return [...j].reduce((acc,x,k)=>{
 	acc[okita[k]]=x;
 	return acc},{});
 	}
 const unita3=x=>{
-	j=unita1(x);
+	j=unita1(x).join('');
 	let s='';
 	for(let i=0;i<x.length;i++){
 		let k=j.indexOf(x[i])+1;
@@ -420,10 +422,10 @@ function eroman(){//ероглифы в русские
 	navigator.clipboard.readText()
 		.then(fb => {
 		masa=unita1(fb);//console.log(masa);
-		masa=[...masa];
+		//masa=[...masa];
 		psih=unita2(fb);//let
-		masa3=unita3(fb);
-		mainway(masa3);		
+		belf=unita3(fb);
+		mainway(belf);		
 		})
 		.catch(err => {
 		console.log('Oblomingo flyed pass', err);
@@ -442,37 +444,38 @@ function digman(){//цифры в русские
 		t=t.split(/(\d+|\S)/g);
 		masa=unidi1(t);//console.log(masa);
 		psih=unidi2(t);//let
-		masa3=unidi3(t);
-		mainway(masa3);
+		belf=unidi3(t);
+		mainway(belf);
 		})
 		.catch(err => {
 		console.log('Oblomingo flyed pass', err);
 		});
 	}
 function mainway(text){
-	let bart=text;//masa3;
-	[...fire].forEach(c=>{bart=bart.replaceAll(c,'')});
-	let risk=[...bart].reduce((a,x)=>{
+	let bart=new String(text);//belf;
+	[...fire].forEach(c=>{bart=bart.replaceAll(c,'')});//фильтруе препинания
+	let risk=[...bart].reduce((a,x)=>{//{} буква:количество
 		a.hasOwnProperty(x)?a[x]++:a[x]=1;
 		return a},{});
 	let teraj=[];
 	for(let p in risk){
-	teraj.push({'buk':p,'num':risk[p],'ero':psih[p]});
-	}
+		teraj.push({'buk':p,'num':risk[p],'ero':psih[p]});
+		}
 	let neyr=teraj.sort((a,b)=>b['num']-a['num']);
-	neyr=neyr.map((c,i)=>{c['nim']=nim[i]; return c});
-	let tref=new String(masa3);
+	neyr=neyr.map((c,i)=>{c['nim']=abc[i]; return c});// 
+
+	let tref=new String(text);
 	neyr.forEach((c,i)=>{tref=tref.replaceAll(c['buk'],c['nim'])});
 	dvigs();//палатки и двиги создать
-	wip=neyr.map(c=>c['ero']);
-	cro=neyr.map(c=>c['num']);
-	dior=[...tref].map(x=>(wip.indexOf(x)>-1)?nim[wip.indexOf(x)]:x).join('');
-	twin=nim.slice(0,masa.length); // имена небоскребов (строка)
-		const booa=[...nim].map(x=>{/// однобукыенные слова
+	wip=neyr.map(c=>c['ero']);// иероглиф небоскреба
+	cro=neyr.map(c=>c['num']);// высоты небоскребов
+	dior=[...tref].map(x=>(wip.indexOf(x)>-1)?abc[wip.indexOf(x)]:x).join('');// визуализация
+	twin=abc.slice(0,masa.length); // имена небоскребов (строка)
+		const booa=[...abc].map(x=>{/// однобукыенные слова
 			let e=new RegExp('\\b'+x+'\\b','g');
 			return e.test(dior);
 			});
-		const boob=[...nim].map(x=>{/// удвойенные буквы
+		const boob=[...abc].map(x=>{/// удвойенные буквы
 			let e=new RegExp(x+x);
 			return e.test(dior);
 			});
@@ -532,10 +535,10 @@ let fb="⺁⺂⺃⺄ 阿 贝非给非⺃⺁ 得⺃⺄也非 非⺃⺁贝用 非�
 fb='ьфбскчуэрлш мщлфбкк ьэ элуэефукн ю рэзущукн, ьбкуцкькщйшущи ьэзущсщфмэрлш срфя срфйфууэя к с лэ дф сбфми фф хфрюэуфчуэрлш к сфчуэрлш—алк ущксужф лфзкрж мщлфбкщйкзмщ, сжбщхэлщуужф ущ мкуосект рлщгкит ущоюк, мэыол фвф огфбдксщлшри с эхбщвфукк йкеш ьолфм ущьбидфуужт ущлидфю.';
 //fb="беги\nлолалололололололололололололололоолололлолллололололололололол\nбеги";
 masa=unita1(fb);
-masa=[...masa];
+//masa=[...masa];
 psih=unita2(fb);
-masa3=unita3(fb);
-mainway(masa3);
+belf=unita3(fb);
+mainway(belf);
 //------------------------------------------------
 function conny(){// вывод деши
 	pok=['en','ru'][+russ];
@@ -551,11 +554,11 @@ function conny(){// вывод деши
 			(v<ws[j].x2)) ooo[twin[j]]=b;
 			}
 		});
-	m1.innerHTML=[...dior].map(x=>x).join('');//DAS
+	m1.innerHTML=dior;//[...dior].map(x=>x).join('');//DAS
 	svit=[...dior].map(x=>(x in ooo)?ooo[x]:x).join('');//х.й
 	m2.innerHTML=svit;
-	m3.innerHTML=m2.innerHTML;
-	svit=svit.replaceAll('&#8201;\n','');// делаю замену не пропуская через визуализацию
+	m3.innerHTML=svit;//m2.innerHTML;
+	svit=svit.replaceAll('&#8201;\n','');// делаю замену
 	//console.log('svit='+svit);
 	}
 </script>
