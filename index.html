@@ -44,6 +44,7 @@ div:has(.butt:hover) .horn {
 	border-radius:30%;
 	transition-duration: 500ms;}
 .nkvd {
+	box-sizing:border-box;
 	position:relative;
 	display: grid;
 	overflow:hidden;
@@ -51,9 +52,11 @@ div:has(.butt:hover) .horn {
 	width:120px; height:120px;place-items: 
 	center;border-radius:20px;
 	margin:0 1px;
+	background-color:red;
 	background-color:white;
 	}
 .nkvd:hover .horn2 {transform:scale(1.1)}
+.nkvd:active {background-color:purple; b0order-width:100px}
 nav {
 	position:fixed; top:20px;left:0;
 	padding:5px;
@@ -69,12 +72,12 @@ nav {
 	display: flex;
 	align-items: flex-start;
 	flex-wrap: wrap;
-	z-index:6;
-	border-radius:50%;
+	z-index:3;
+	b0order-radius:50%;
 	}
 #india{
 	padding: 33px 0;
-	background: linear-gradient(#7748a9, #ded);
+	background: linear-gradient(#7748a9, #00000000);/*(#7748a9, #ded);*/
 	text-align: center;
 	margin-bottom:1444px;
 	}
@@ -113,7 +116,7 @@ nav {
 	}
 article{
 	margin: auto;
-	margin-top:45px;
+	margin-top:64px; /* опустил чистый лист пониже */
 	position: relative;
 	width: fit-content;
 	}
@@ -129,7 +132,7 @@ article{
 	color: white;
 	user-select: none;
 	height: 20px;
-    z-index: 9;
+    z-index: 4;
 	background: #025202;
 	}
 .ira2{
@@ -138,7 +141,7 @@ article{
 	color: white;
 	user-select: none;
 	height: 20px;
-    z-index: 10;
+    z-index: 5;
 	background: red;
 	}
 .iba1,.iba2{
@@ -150,7 +153,7 @@ article{
 	bottom: 10px;
 	width: 100%;
 	height: 444px;
-	z-index: 5;
+	z-index: 2;
 }
 #platr,#plate{
 	padding: 1px 30px 0;
@@ -184,7 +187,7 @@ article{
 	text-overflow: clip;
 	color:black;
 	letter-spacing:1px;
-	z-index:6;
+	z-index:3;
 	}
 .b:after{
 	content: '';
@@ -231,31 +234,25 @@ article{
 
 <nav>
 <!-- ************************************ -->
-<div>
-<div class="nkvd" style="height:59px;margin-bottom:2px;" 
-	onclick="
-		goho();//откат в палатки
-		conny();// вывод деши
-">
-<div class="horn2">reset</div>
-</div>
+	<div>
+		<div class="nkvd" style="height:59px;margin-bottom:2px;" 
+			onclick="
+			sit();//goho();//откат в палатки
+			conny();// вывод деши
+			">
+			<span class="horn2">reset</span>
+		</div>
 <!-- ************************************ -->
-<div class="nkvd" style="height:59px" onclick="
-
-	cop.value=svit;
-	//cop.value=svit.replaceAll('&#8201;','');
-	
-	//console.log(svit);
-	//console.log(svit.replaceAll(/(&#8201;\n)/g,'*'));
-	
-	/*console.log(cop.value);*/
-	cop.select();
-	document.execCommand('copy');
-	window.getSelection()?.removeAllRanges();
-">
-<div class="horn2">copy</div>
-</div>
-</div>
+		<div class="nkvd" style="height:59px" onclick="
+		
+			cop.value=svit;
+			cop.select();
+			document.execCommand('copy');
+			window.getSelection()?.removeAllRanges();
+			">
+			<span class="horn2">copy</span>
+		</div>
+	</div>
 <!-- ************************************ -->
 <div class="nkvd">
 <div class="butt" onclick="eroman()">
@@ -451,6 +448,7 @@ function digman(){//цифры в русские
 		console.log('Oblomingo flyed pass', err);
 		});
 	}
+
 function mainway(text){
 	let bart=new String(text);//belf;
 	[...fire].forEach(c=>{bart=bart.replaceAll(c,'')});//фильтруе препинания
@@ -508,19 +506,20 @@ function mainway(text){
 		boy['ru'].forEach(c=>{dragElement(c)});
 		boy['en'].forEach(c=>{dragElement(c)});
 
-	const sit=()=>{
+
+
+	sit();
+	conny();
+	}// ends mainway()
+function sit(){//const sit=()=>{
 		ws=[...nebo].map(x=>({// коорды посадочных мест
 			x1:x.offsetLeft,
 			x2:x.offsetLeft+x.offsetWidth,
 			y1:x.offsetTop,
 			y2:x.offsetTop+x.offsetHeight
-		}));
+			}));	
 		goho();//откат в палатки
-		}
-	sit();
-	conny();
-	}// ends mainway()
-	
+	}	
 function goho(){//откат в палатки
 	boy['ru'].forEach((x,i)=>{
 		x.style.left = girl['ru'][i].offsetLeft+'px';
@@ -561,6 +560,8 @@ function conny(){// вывод деши
 	svit=svit.replaceAll('&#8201;\n','');// делаю замену
 	//console.log('svit='+svit);
 	}
+//--------------------------------------
+window.onresize=()=>{sit()}	
 </script>
 </body>
 </html>
